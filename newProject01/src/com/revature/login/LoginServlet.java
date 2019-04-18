@@ -12,6 +12,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 import com.revature.web.jdbc.Employee;
@@ -104,6 +105,12 @@ public class LoginServlet extends HttpServlet {
 				Cookie loggedIn = new Cookie("loggedIn", tempId);
 				loggedIn.setMaxAge(3600);
 				response.addCookie(loggedIn);
+				
+				// VALIDATE/INVALIDATE SESSION
+				HttpSession session = request.getSession(true);
+				session.setAttribute("User", tempId);
+				System.out.println("Session Attribute set: " + session.getAttribute("User"));
+				System.out.println(request.getSession(false));
 
 				// if employee match, redirect to empHomepage
 				if (employees.get(i).getManager() == 0) {
