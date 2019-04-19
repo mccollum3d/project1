@@ -9,23 +9,34 @@
 </head>
 <body>
 
+<%
+response.setHeader("Cache-Control","no-cache"); //Forces caches to obtain a new copy of the page from the origin server
+response.setHeader("Cache-Control","no-store"); //Directs caches not to store the page under any circumstance
+response.setDateHeader("Expires", 0); //Causes the proxy cache to see the page as "stale"
+response.setHeader("Pragma","no-cache"); //HTTP 1.0 backward compatibility
+String userName = (String) session.getAttribute("User");
+if (null == userName) {
+   request.setAttribute("Error", "Session has ended.  Please login.");
+   response.sendRedirect("http://localhost:8088/newProject01/index.html");
+}
+%>
+
 	<!--  NAVBAR -->
 	<ul>
 		<li><a href="http://localhost:8088/newProject01/employee/ehome.jsp">Home</a></li>
-		<li><a href="http://localhost:8088/newProject01/employee/submitRequest.html">Submit a Request</a></li>
+		<li><a href="http://localhost:8088/newProject01/employee/submitRequest.jsp">Submit a Request</a></li>
 		<li><a href="http://localhost:8088/newProject01/ReimbEmpViewPendServlet">View my Pending Request</a></li>
 		<li><a class="active" href="http://localhost:8088/newProject01/ReimbEmpViewResolvedServlet"">View my Resolved Request</a></li>
 		<li><a href="http://localhost:8088/newProject01/EmpMyInfoServlet">View My Info</a></li>
-		<li><a href="http://localhost:8088/newProject01/index.html"
+		<li><a href="http://localhost:8088/newProject01/LogoutServlet"
 			class="btn-danger">Log Out</a></li>
 	</ul>
-
+	<br>
 	<div id="wrapper">
 		<div id="header">
-			<h2>Employee Pending Requests</h2>
+			<h2 style="text-align: center">Employee Pending Requests</h2>
 		</div>
 	</div>
-
 
 	<div id="container">
 		<div id="content">
@@ -39,8 +50,7 @@
 					<th>Amount</th>
 					<th>Status</th>
 				</tr>
-
-
+				
 				<c:forEach var="tempReimbursement" items="${EPENDING_LIST}">
 
 					<c:if test="${tempReimbursement.status !=  'pending'}">
@@ -57,41 +67,6 @@
 			</table>
 		</div>
 	</div>
-
-
-
-
-
-
-	<!--  
-	<button type="button" onclick="pending()">View Pending</button>
-	<button type="button" onclick="denied()">View Denied</button>
-	<button type="button" onclick="approved()">View Approved</button>
-	<button type="button" onclick="all()">View All</button>
-
-
-
-	<script>
-		function pending() {
-			console.log("Pending() activated!");
-			var xhttp = new XMLHttpRequest();
-			xhttp.onreadystatechange = function() {
-				if (this.readyState == 4 && this.status == 200) {
-					var x = document.getElementById("pending");
-					x.style.display = "block";
-					
-				}
-			};
-			xhttp
-					.open(
-							"GET",
-							"http://localhost:8088/newProject01/ReimbEmpViewPendServlet",
-							true);
-			xhttp.send();
-		}
-	</script>
- -->
-
 
 </body>
 </html>

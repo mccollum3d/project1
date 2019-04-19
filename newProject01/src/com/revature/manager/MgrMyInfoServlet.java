@@ -81,7 +81,7 @@ public class MgrMyInfoServlet extends HttpServlet {
 
 	private void updateMgr(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		// Read student info from form data
+		// Read employee info from form data
 		String empId = request.getParameter("employeeId");
 		int id = Integer.parseInt(empId);
 		
@@ -89,12 +89,12 @@ public class MgrMyInfoServlet extends HttpServlet {
 		String lastName = request.getParameter("lastName");
 		String loginName = request.getParameter("loginName");
 	
-		// Create a new student object
+		// Create a new employee object
 		Employee theEmp = new Employee(id, firstName, lastName, loginName);
 		
 		// Perform update on Database
 		mgrDbUtil.updateEmployee(theEmp);
-		// Send them back to the "list students" page
+		// Send them back to the "list employees" page
 		
 	}
 

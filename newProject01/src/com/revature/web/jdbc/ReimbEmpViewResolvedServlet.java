@@ -80,7 +80,7 @@ public class ReimbEmpViewResolvedServlet extends HttpServlet {
 		// get employees from db util
 		List<Reimbursement> reimbursements = reimbursementDbUtil.getReimbursements(user);
 
-		// add students to the request
+		// add employees to the request
 		request.setAttribute("EPENDING_LIST", reimbursements);
 
 		// send to JSP page (the view)

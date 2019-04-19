@@ -14,20 +14,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
-/**
- * Servlet implementation class TestServlet
+/*
+ * Hello there!
+ * If you're reading this, it's a surprise to be sure, but a welcome one!
+ * This was a little test servlet I made to test my JDBC connection.
+ * It was never used in production, but I was too nostalgic to delete it.
+ * 
  */
+
 @WebServlet("/TestServlet")
 public class TestServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	// Define datasource/connection pool for Resource Injection
 		@Resource(name="jdbc/project1")
 		private DataSource dataSource;
-		
-		
-		/**
-		 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-		 */
+	
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 			// Step 1:  Set up the printwriter
@@ -59,7 +60,4 @@ public class TestServlet extends HttpServlet {
 				exc.printStackTrace();
 			}
 		}
-
 	}
-
-

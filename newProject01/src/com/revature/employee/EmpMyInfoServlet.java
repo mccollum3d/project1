@@ -41,13 +41,7 @@ public class EmpMyInfoServlet extends HttpServlet {
 		}
 
 	}
-	
-	
-	
-	
-	
-	
-	
+
     public EmpMyInfoServlet() {
         super();
         // TODO Auto-generated constructor stub

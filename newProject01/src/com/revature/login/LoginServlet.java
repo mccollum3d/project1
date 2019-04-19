@@ -141,16 +141,6 @@ public class LoginServlet extends HttpServlet {
 			System.out.println("Login/Password combo does not match. No logins found.");
 		}
 		
-
-
-		/*
-		 * // add employees to the request request.setAttribute("EMPLOYEE_LIST",
-		 * employees);
-		 * 
-		 * // send to JSP page (the view) RequestDispatcher dispatcher =
-		 * request.getRequestDispatcher("/manager/list-employees.jsp");
-		 * dispatcher.forward(request, response);
-		 */
 	}
 
 }

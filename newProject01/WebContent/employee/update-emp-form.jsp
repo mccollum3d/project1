@@ -10,16 +10,26 @@
 	<link type="text/css" rel="stylesheet" href="css/add-student-style.css">
 </head>
 
-
 <body>
+<%
+response.setHeader("Cache-Control","no-cache"); //Forces caches to obtain a new copy of the page from the origin server
+response.setHeader("Cache-Control","no-store"); //Directs caches not to store the page under any circumstance
+response.setDateHeader("Expires", 0); //Causes the proxy cache to see the page as "stale"
+response.setHeader("Pragma","no-cache"); //HTTP 1.0 backward compatibility
+String userName = (String) session.getAttribute("User");
+if (null == userName) {
+   request.setAttribute("Error", "Session has ended.  Please login.");
+   response.sendRedirect("http://localhost:8088/newProject01/index.html");
+}
+%>
 	<div id="wrapper">
 		<div id="header">
-			<h2> Update Employee's Info</h2>
+			<h2 style="text-align: center"> Update Employee's Info</h2>
 		</div>
 	</div>
 	
 	<div id="container">
-		<h3>Update Info</h3>
+		<h3 style="text-align: center">Update Info</h3>
 		
 		<form action="http://localhost:8088/newProject01/EmpMyInfoServlet" method="GET">
 		
@@ -38,11 +48,11 @@
 					</tr>
 					<tr>
 						<td><label>Login Name:</label></td>
-						<td><input type="text" name="loginName" value="${THE_EMPLOYEE.loginName}"  /></td>
+						<td><input type="text" name="loginName" value="${THE_EMPLOYEE.loginName}" /></td>
 					</tr>
 					<tr>
 						<td><label>Password:</label></td>
-						<td><input type="password" name="password" value="${THE_EMPLOYEE.password}"  disabled/></td>
+						<td><input type="password" name="password" value="${THE_EMPLOYEE.password}" /></td>
 					</tr>
 					
 					<!--  All requests will start off as pending -->
@@ -53,39 +63,15 @@
 					</tr>
 					
 				</tbody>
-			</table>
-			
-		
+			</table>	
 		</form>
 		
 		<div style="clear: both;">
-		</div>
-		
-		<p>
+		</div>	
+		<p style="text-align: center">
 			<a href="http://localhost:8088/newProject01/EmpMyInfoServlet">Back to Employee Info</a>
 		</p>
 		
-		
-	</div>
-	
-	
-	
-	
-	
-	
+	</div>	
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-

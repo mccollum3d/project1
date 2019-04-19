@@ -9,22 +9,35 @@
 </head>
 
 <body>
+
+<%
+response.setHeader("Cache-Control","no-cache"); //Forces caches to obtain a new copy of the page from the origin server
+response.setHeader("Cache-Control","no-store"); //Directs caches not to store the page under any circumstance
+response.setDateHeader("Expires", 0); //Causes the proxy cache to see the page as "stale"
+response.setHeader("Pragma","no-cache"); //HTTP 1.0 backward compatibility
+String userName = (String) session.getAttribute("User");
+if (null == userName) {
+   request.setAttribute("Error", "Session has ended.  Please login.");
+   response.sendRedirect("http://localhost:8088/newProject01/index.html");
+}
+%>
+
 <!-- NAVBAR -->
 	<ul>
 		<li><a href="http://localhost:8088/newProject01/employee/ehome.jsp">Home</a></li>
-		<li><a href="http://localhost:8088/newProject01/employee/submitRequest.html">Submit a Request</a></li>
+		<li><a href="http://localhost:8088/newProject01/employee/submitRequest.jsp">Submit a Request</a></li>
 		<li><a href="http://localhost:8088/newProject01/ReimbEmpViewPendServlet">View my Pending Request</a></li>
 		<li><a href="http://localhost:8088/newProject01/ReimbEmpViewResolvedServlet">View my Resolved Request</a></li>
 		<li><a class="active" href="http://localhost:8088/newProject01/EmpMyInfoServlet">View My Info</a></li>
-		<li><a href="http://localhost:8088/newProject01/index.html" class="btn-danger">Log Out</a></li>
+		<li><a href="http://localhost:8088/newProject01/LogoutServlet" class="btn-danger">Log Out</a></li>
 	</ul>
-
+	<br>
 	<div id="wrapper">
 		<div id="header">
-			<h2>Your Info</h2>
+			<h2 style="text-align: center">Your Info</h2>
 		</div>
 	</div>
-
+	<br>
 	<div id="fancy">
 		<div id="content">
 			<table>

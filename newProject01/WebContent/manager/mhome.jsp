@@ -4,21 +4,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Manager Homepage!</title>
+<title >Manager Homepage!</title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
-
-<%
-Cookie[] theCookies = request.getCookies();
-if (theCookies != null) {
-	for (Cookie temp : theCookies) {
-		if("loggedIn".equals(temp.getName())) {
-			System.out.println("current user id via cookie = "+temp.getValue());
-		}
-	}
-}
-%>
 
 <%
 response.setHeader("Cache-Control","no-cache"); //Forces caches to obtain a new copy of the page from the origin server
@@ -41,20 +30,12 @@ if (null == userName) {
 		<li><a href="http://localhost:8088/newProject01/mgrMyInfoServlet">View My Info</a></li>
 		<li><a href="http://localhost:8088/newProject01/LogoutServlet" class="btn-danger">Log Out</a></li>
 	</ul>
+
+	<h1 style="text-align:center;">Manager Homepage!</h1>
 	
-	<h1>Manager Homepage!</h1>
-	<h5> [Your company notice here!]</h5>
-	<p> Important announcements.</p>
+	<p style="text-align:center;"> <b>Important announcements:</b></p>
+	<p style="text-align:center;"> Continue beatings until morale improves.</p>
+	<p style="text-align:center;"> Only YOU can prevent forest fires.</p>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

@@ -28,18 +28,16 @@ if (null == userName) {
 		<li><a href="http://localhost:8088/newProject01/mgrMyInfoServlet">View My Info</a></li>
 		<li><a href="http://localhost:8088/newProject01/LogoutServlet" class="btn-danger">Log Out</a></li>
 	</ul>
-
+	<br>
 	<div id="wrapper">
 		<div id="header">
 			<h2>Manager: View Pending Requests</h2>
 		</div>
 	</div>
 
-
 	<div id="container">
 		<div id="content">
 			<table>
-
 				<tr>
 					<th>Request ID</th>
 					<th>First Name</th>

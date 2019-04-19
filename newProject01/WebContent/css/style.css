@@ -10,8 +10,12 @@ table {
 	border-bottom:1px solid gray;
 	font-family: Tahoma,Verdana,Segoe,sans-serif;
 	width:72%;
+	margin-left:auto; 
+    margin-right:auto;
 }
- 
+h2, h3 {
+text-align:center;	
+}
 th {
 	border-bottom:1px solid gray;
 	background:none repeat scroll 0 0 #0775d3;
@@ -27,8 +31,20 @@ tr {
 tr:nth-child(even) {background: #FFFFFF}
 tr:nth-child(odd) {background: #BBBBBB}	
  
-#wrapper {width: 100%; margin-top: 0px; }
-#header {width: 72%; background: #0775d3; margin-top: 0px; padding:15px 0px 15px 0px;}
+#wrapper {
+width: 100%; 
+margin-top: 0px;
+margin-left:auto; 
+margin-right:auto;
+}
+#header {
+width: 72%; 
+background: #0775d3; 
+margin-top: 0px; 
+padding:15px 0px 15px 0px;
+margin-left:auto; 
+margin-right:auto;
+}
 #header h2 {width: 100%; margin:auto; color: #FFFFFF;}
 #container {width: 100%; margin:auto}
 #container h3 {color: #000;}

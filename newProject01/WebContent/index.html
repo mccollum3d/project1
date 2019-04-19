@@ -16,11 +16,11 @@
 	</div>
 
 	<!--  Add a form -->
-	<div id="container">
-		<h3>Login to Website (case sensitive)</h3>
+	<div id="container" style="text-align: center">
+		<h3>Login to Website</h3>
 		<form action="/newProject01/LoginServlet" method="POST">
 			<input type="hidden" name="command" value="ADD" />
-			<table>
+			<table align="center">
 				<tbody>
 					<tr>
 						<td><label>User Name:</label></td>
@@ -39,97 +39,15 @@
 			</table>
 		</form>
 	</div>	
-	<!--  Servlet gets data from the database -->
-	
-	<!--  Check if user name/password exists in database -->
-	
-	<!-- If exists & Manager = 0, goto Employee Home. If Manager = 1, goto Manager home. -->
-	
-	<!--  Create Employee & Manager Homepages -->
-
-	
-
-
-	
-	
-	<!--  DEBUG BUTTONS -->
-		
-	<p> Debugging Tools </p>
-	<div id="content">
-		<input type="button" value="Add Request" onclick="window.location.href='employee/submitRequest.html'">
-	</div>
-	
-	
-	<!--  END DEBUG BUTTONS -->
-	<h3>Reminders:</h3>
-	<ol>
-		<li> ReimbEmpViewPendServlet lists all requests regardless of status, and isn't linked to mHome yet.</li>
-		<li> Invalidate session on logout to prevent back button from being used</li>
-		<li> Use absolute urls to prevent confusion/typos and constantly changing relative urls on each page</li>
-		<li> use a c:if value= ${status=pending} logic to sort requests. </li>
-	</ol>
-	
-	
-	
-	<!--  EVERYTHING BELOW HERE IS OLD CODE OR TESTING/DEBUGGING. DELETE BEFORE UPLOADING TO GIT! -->
-	
-	<!--  optional - create employee accounts
-	<div class="container-fluid">
-		<div class="row" style="height: 200px">
-			<div class="col-2"></div>
-			<div class="col-8">
-				<h2 style="text-align: center">Create Account?</h2>
-				<form>
-					<input class="form-control" type="text" name="firstName" placeholder="Enter your First Name"> 
-					<input class="form-control" type="text" name="lastName" placeholder="Enter your Last Name"> 
-					<input class="form-control" type="text" name="loginName" placeholder="Enter your username"> 
-					<input class="form-control" type="password" name="password1" placeholder="Enter your password">
-					<input class="form-control" type="password" name="password2" placeholder="Re-enter your password">
-					<input class="form-control" type="text" name="manager" placeholder="Manager? 1=yes 0=no"> 
-						<button class="btn" onclick="window.location = 'employee/employee.html'">
-							Create New Employee Account
-						</button>
-						
-				</form>
-			</div>
-			<div class="col-2"></div>
-		</div>
-	</div>
-	
-	 end optional add employee accounts-->
-
-<div id="demo">
-<h3>Test AJAX here:</h3>
-<button type="button" onclick="loadDoc()">Change Content</button>
-</div>
-
-<!--  DEMO OF AJAX, CALLING A SERVLET THAT RETURNS FIRST NAMES FROM DATABASE -->
-<!--  EXTEND THIS IMPLEMENTATION INTO MORE PRACTICAL USES -->
-<script>
-function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("demo").innerHTML =
-      this.responseText;
-    }
-  };
-  xhttp.open("GET", "http://localhost:8088/newProject01/TestServlet", true);
-  xhttp.send();
-}
-</script>
-
 
 <script src="http://localhost:8088/newProject01/js/myajax.js"></script>
-
-
-
-
 </body>
 <footer>
 <br><br><br><br><br><br>
-Project 1 - Java/JDBC/Servlet/SQL
+<p style="text-align: center">
+ Project 1 - Java/JDBC/Servlet/SQL & JSP
 <br>
 Coded by Christopher McCollum
+</p>
 </footer>
 </html>

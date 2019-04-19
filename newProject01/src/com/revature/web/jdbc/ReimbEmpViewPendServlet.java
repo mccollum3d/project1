@@ -54,7 +54,7 @@ public class ReimbEmpViewPendServlet extends HttpServlet {
 			// read the "command" parameter
 			String theCommand = request.getParameter("command");
 
-			// if command missing, list students
+			// if command missing, list employees
 			if (theCommand == null) {
 				theCommand = "LIST";
 			}
@@ -81,7 +81,7 @@ public class ReimbEmpViewPendServlet extends HttpServlet {
 
 	private void addRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		// read student info from form data
+		// read employee info from form data
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
 		String comment = request.getParameter("comment");
@@ -92,13 +92,13 @@ public class ReimbEmpViewPendServlet extends HttpServlet {
 		// int amount = 1; // TODO find a way to parse to int, or convert databse column
 		// to VARCHAR and ints to Strings.
 
-		// create a new student object
+		// create a new employee object
 		Reimbursement theReimbursement = new Reimbursement(firstName, lastName, comment, amount, status, empId);
 
-		// add the student to the database
+		// add the employee to the database
 		reimbursementDbUtil.addReimbursement(theReimbursement);
 
-		// send back to the main page (the student list)
+		// send back to the main page (the employee list)
 		listPending(request, response);
 
 	}
@@ -110,7 +110,7 @@ public class ReimbEmpViewPendServlet extends HttpServlet {
 		// get employees from db util
 		List<Reimbursement> reimbursements = reimbursementDbUtil.getReimbursements(user);
 
-		// add students to the request
+		// add employees to the request
 		request.setAttribute("EPENDING_LIST", reimbursements);
 
 		// send to JSP page (the view)
