@@ -16,9 +16,7 @@ import javax.sql.DataSource;
 
 /*
  * Hello there!
- * If you're reading this, it's a surprise to be sure, but a welcome one!
- * This was a little test servlet I made to test my JDBC connection.
- * It was never used in production, but I was too nostalgic to delete it.
+ * This is a test servlet to test my JDBC.
  * 
  */
 
