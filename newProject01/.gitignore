@@ -1,1 +1,7 @@
-context.xml
+*.classpath*
+*.settings*
+*.project*
+*resources*
+*target*
+*mvn*
+

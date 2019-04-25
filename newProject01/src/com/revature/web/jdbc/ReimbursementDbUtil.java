@@ -45,7 +45,7 @@ public class ReimbursementDbUtil {
 				int id = myRs.getInt("ID");
 				String firstName = myRs.getString("first_name");
 				String lastName = myRs.getString("last_name");
-				String comment = myRs.getString("comment");
+				String comment = myRs.getString("myComment");
 				String amount = myRs.getString("Amount");
 				String status = myRs.getString("status");
 
@@ -93,7 +93,7 @@ public class ReimbursementDbUtil {
 			// create sql for insert
 			myConn = dataSource.getConnection();
 
-			String sql = "INSERT INTO reimbursement " + "(First_Name, Last_Name, Comment, Amount, Status, empId) "
+			String sql = "INSERT INTO reimbursement " + "(First_Name, Last_Name, myComment, Amount, Status, empId) "
 					+ "values (?, ?, ?, ?, ?, " + empId + ")";
 
 			myStmt = myConn.prepareStatement(sql);
@@ -142,7 +142,7 @@ public class ReimbursementDbUtil {
 				int id = myRs.getInt("ID");
 				String firstName = myRs.getString("first_name");
 				String lastName = myRs.getString("last_name");
-				String comment = myRs.getString("comment");
+				String comment = myRs.getString("myComment");
 				String amount = myRs.getString("Amount");
 				String status = myRs.getString("status");
 				int empId = myRs.getInt("empId");
