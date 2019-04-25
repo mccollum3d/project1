@@ -1,9 +1,0 @@
-<Context>            
- <Resource name="jdbc/project1" 
-  			auth="Container" type="javax.sql.DataSource"
-               maxActive="20" maxIdle="5" maxWait="10000"
-               username="chris" password="WARMACHINEROX" 
-               driverClassName="oracle.jdbc.driver.OracleDriver"
-               url="jdbc:oracle:thin:@devops-example.clvjnnribj04.us-east-2.rds.amazonaws.com:1521:ORCL"/>
-               
-</Context>
