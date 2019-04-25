@@ -49,7 +49,7 @@
 					<!-- overwrites the war if exists -->
 					<update>true</update>
 					<!-- refers to <server> credentials configured in maven settings.xml 
-						which refers to credentials in the tomcat-users.xml -->
+						which refers to credentials in the tomcat-users.xml  -->
 					<server>maven</server>
 					<!-- what path to deploy to tomcat, then would be available at your.aws.ip:8080/example -->
 					<path>/newProject01</path>
