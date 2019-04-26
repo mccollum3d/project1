@@ -19,6 +19,21 @@
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.glassfish.web/javax.servlet.jsp.jstl -->
+		<dependency>
+			<groupId>org.glassfish.web</groupId>
+			<artifactId>javax.servlet.jsp.jstl</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/javax.servlet.jsp.jstl-api -->
+		<dependency>
+			<groupId>javax.servlet.jsp.jstl</groupId>
+			<artifactId>javax.servlet.jsp.jstl-api</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -49,7 +64,7 @@
 					<!-- overwrites the war if exists -->
 					<update>true</update>
 					<!-- refers to <server> credentials configured in maven settings.xml 
-						which refers to credentials in the tomcat-users.xml  -->
+						which refers to credentials in the tomcat-users.xml -->
 					<server>maven</server>
 					<!-- what path to deploy to tomcat, then would be available at your.aws.ip:8080/example -->
 					<path>/newProject01</path>
