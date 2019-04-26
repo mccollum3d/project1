@@ -51,11 +51,11 @@ if (null == userName) {
 
 				<c:forEach var="tempReimbursement" items="${EPENDING_LIST}">
 				
-				<c:url var="tempLinkA" value="/newProject01/ReimbMgrViewPendServlet">
+				<c:url var="tempLinkA" value="/ReimbMgrViewPendServlet">
 					<c:param name="command" value="Approved" />
 					<c:param name="requestId" value="${tempReimbursement.id}" />
 				</c:url>
-				<c:url var="tempLinkD" value="/newProject01/ReimbMgrViewPendServlet">
+				<c:url var="tempLinkD" value="/ReimbMgrViewPendServlet">
 					<c:param name="command" value="Denied" />
 					<c:param name="requestId" value="${tempReimbursement.id}" />
 				</c:url>
@@ -68,7 +68,7 @@ if (null == userName) {
 							<td>${tempReimbursement.comment}</td>
 							<td>${tempReimbursement.amount}</td>
 							<td>${tempReimbursement.status}</td>
-							<td> <a href="${tempLinkA}">Approve</a> <a href="${tempLinkA}">Deny</a></td>
+							<td> <a href="${tempLinkA}">Approve</a> <a href="${tempLinkD}">Deny</a></td>
 						</tr>
 					</c:if>
 				</c:forEach>
