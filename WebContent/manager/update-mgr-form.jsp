@@ -19,7 +19,7 @@ response.setHeader("Pragma","no-cache"); //HTTP 1.0 backward compatibility
 String userName = (String) session.getAttribute("User");
 if (null == userName) {
    request.setAttribute("Error", "Session has ended.  Please login.");
-   response.sendRedirect("http://localhost:8088/newProject01/index.html");
+   response.sendRedirect("/newProject01/index.html");
 }
 %>
 
@@ -68,7 +68,7 @@ if (null == userName) {
 		<div style="clear: both;">
 		</div>
 		<p  style="text-align: center">
-			<a href="http://localhost:8088/newProject01/mgrMyInfoServlet">Back to Manager Info</a>
+			<a href="/newProject01/mgrMyInfoServlet">Back to Manager Info</a>
 		</p>
 	
 	</div>	

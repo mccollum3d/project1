@@ -66,7 +66,7 @@ public class MgrMyInfoServlet extends HttpServlet {
 			case "UPDATE":
 				updateMgr(request, response);
 				//dispatcher.forward doesn't send them "back" to the page, it needs the refresh to work.
-				response.sendRedirect("http://localhost:8088/newProject01/mgrMyInfoServlet");
+				response.sendRedirect("/newProject01/mgrMyInfoServlet");
 				break;
 			default:
 				listMgrInfo(request, response);
@@ -140,7 +140,7 @@ public class MgrMyInfoServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/manager/mgrInfo.jsp");
 		dispatcher.forward(request, response);
 
-		// response.sendRedirect("http://localhost:8088/newProject01/manager/list-employees.jsp");
+		// response.sendRedirect("/newProject01/manager/list-employees.jsp");
 	}
 
 }

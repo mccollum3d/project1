@@ -114,7 +114,7 @@ public class LoginServlet extends HttpServlet {
 
 				// if employee match, redirect to empHomepage
 				if (employees.get(i).getManager() == 0) {
-					response.sendRedirect("http://localhost:8088/newProject01/employee/ehome.jsp");
+					response.sendRedirect("/newProject01/employee/ehome.jsp");
 					success = true;
 					break;
 				}
@@ -125,7 +125,7 @@ public class LoginServlet extends HttpServlet {
 					// request.getRequestDispatcher("/manager/mhome.html");
 					// dispatcher2.forward(request, response);
 					// ServletResponse sr = response.sendRedirect		
-					response.sendRedirect("http://localhost:8088/newProject01/manager/mhome.jsp");
+					response.sendRedirect("/newProject01/manager/mhome.jsp");
 					success = true;
 					break;
 				}

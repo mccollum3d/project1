@@ -19,7 +19,7 @@ response.setHeader("Pragma","no-cache"); //HTTP 1.0 backward compatibility
 String userName = (String) session.getAttribute("User");
 if (null == userName) {
    request.setAttribute("Error", "Session has ended.  Please login.");
-   response.sendRedirect("http://localhost:8088/newProject01/index.html");
+   response.sendRedirect("/newProject01/index.html");
 }
 %>
 	<div id="wrapper">
@@ -31,7 +31,7 @@ if (null == userName) {
 	<div id="container">
 		<h3 style="text-align: center">Update Info</h3>
 		
-		<form action="http://localhost:8088/newProject01/EmpMyInfoServlet" method="GET">
+		<form action="/newProject01/EmpMyInfoServlet" method="GET">
 		
 			<input type="hidden" name="command" value="UPDATE" />
 			<input type="hidden" name="employeeId" value="${THE_EMPLOYEE.id}" />
@@ -69,7 +69,7 @@ if (null == userName) {
 		<div style="clear: both;">
 		</div>	
 		<p style="text-align: center">
-			<a href="http://localhost:8088/newProject01/EmpMyInfoServlet">Back to Employee Info</a>
+			<a href="/newProject01/EmpMyInfoServlet">Back to Employee Info</a>
 		</p>
 		
 	</div>	

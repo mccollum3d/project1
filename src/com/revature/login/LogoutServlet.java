@@ -35,7 +35,7 @@ public class LogoutServlet extends HttpServlet {
 			session.invalidate();
 			
 			System.out.println(request.getSession(false));
-			response.sendRedirect("http://localhost:8088/newProject01/index.html");
+			response.sendRedirect("/newProject01/index.html");
 		}
 
 		

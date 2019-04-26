@@ -17,16 +17,16 @@ response.setHeader("Pragma","no-cache"); //HTTP 1.0 backward compatibility
 String userName = (String) session.getAttribute("User");
 if (null == userName) {
    request.setAttribute("Error", "Session has ended.  Please login.");
-   response.sendRedirect("http://localhost:8088/newProject01/index.html");
+   response.sendRedirect("/newProject01/index.html");
 }
 %>
 	<ul>
-		<li><a href="http://localhost:8088/newProject01/manager/mhome.jsp">Home</a></li>
-		<li><a href="http://localhost:8088/newProject01/ReimbMgrViewPendServlet">View Pending Request</a></li>
-		<li><a href="http://localhost:8088/newProject01/ReimbMgrViewResolvedServlet">View Resolved Request</a></li>
-		<li><a class="active" href="http://localhost:8088/newProject01/EmployeeControllerServlet">View Employee Info</a></li>
-		<li><a href="http://localhost:8088/newProject01/mgrMyInfoServlet">View My Info</a></li>
-		<li><a href="http://localhost:8088/newProject01/LogoutServlet" bgcolor="red">Log Out</a></li>
+		<li><a href="/newProject01/manager/mhome.jsp">Home</a></li>
+		<li><a href="/newProject01/ReimbMgrViewPendServlet">View Pending Request</a></li>
+		<li><a href="/newProject01/ReimbMgrViewResolvedServlet">View Resolved Request</a></li>
+		<li><a class="active" href="/newProject01/EmployeeControllerServlet">View Employee Info</a></li>
+		<li><a href="/newProject01/mgrMyInfoServlet">View My Info</a></li>
+		<li><a href="/newProject01/LogoutServlet" bgcolor="red">Log Out</a></li>
 	</ul>
 	<br>
 	<div id="wrapper">

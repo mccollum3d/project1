@@ -63,7 +63,7 @@ public class EmployeeControllerServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/manager/list-employees.jsp");
 		dispatcher.forward(request, response);
 		
-		//response.sendRedirect("http://localhost:8088/newProject01/manager/list-employees.jsp");
+		//response.sendRedirect("/newProject01/manager/list-employees.jsp");
 	}
 
 }
